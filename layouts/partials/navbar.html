@@ -4,7 +4,7 @@
         <div class="pure-menu pure-menu-horizontal nav-menu">
             {{ $baseurl := .Site.BaseURL }}
             <a href="{{$baseurl}}" class="site-title pure-menu-heading">{{ .Site.Title }}</a>
-            <div class="footnote">オカルト板ウミガメのスープ過去ログ保管庫＆過去問検索サイトです。</div>
+            <div class="footnote">過去ログ保管庫＆過去問検索サイトです。</div>
             <ul class="pure-menu-list pull-right">
 				{{ if eq .Site.Params.topmenu "categories" }}
                 {{ range $name,$page := .Site.Taxonomies.categories }}
