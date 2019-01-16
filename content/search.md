@@ -14,9 +14,9 @@ function getParam(name, url) {
 }
 
 $(document).ready(function(){
-    $("#words").val(getParam("words"));
+    $("#q").val(getParam("q"));
     $("#op").val(getParam("op"));
-	$("#d").text(getParam("words"));
+	$("#d").text(getParam("q"));
 	$.ajax({	
         url:"https://nowaiuqi8g.execute-api.ap-northeast-1.amazonaws.com/q",
 		type:"GET",		// 使用するHTTPメソッド
@@ -27,11 +27,11 @@ $(document).ready(function(){
 		}).done(function(data1,textStatus,jqXHR) {
 				var data2 = JSON.stringify(data1);
 				// 3. キーを指定して値を表示 
-				$("#q").text(data2);
+				$("#f").text(data2);
 
 		// 6. failは、通信に失敗した時に実行される
 		}).fail(function(jqXHR, textStatus, errorThrown ) {
-				$("#q").text(textStatus); //例：error
+				$("#f").text(textStatus); //例：error
 		// 7. alwaysは、成功/失敗に関わらず実行される
 		}).always(function(){
 				$("#d").text(getParam("words"));
@@ -41,9 +41,9 @@ $(document).ready(function(){
 {{< /script >}}
 
 <form id="form" action="" method="get">
-<input type="text" id="words" name="words">
-<input type="text" id="op" name="op">
+<input type="text" id="q" name="q">
+<input type="hidden" id="op" name="op">
 <input type="submit">
 </form>
-<div id="q"></div>
+<div id="f"></div>
 <div id="d"></div>
