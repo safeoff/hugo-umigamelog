@@ -27,8 +27,12 @@ function getParam(name, url) {
 
 $(document).ready(function(){
     $("#q").val(getParam("q"));
-    $("#op").val(getParam("op"));
-	$("#d").text(getParam("q"));
+	if (getParam("op") == "or") {
+		$("#or").prop("checked", true);
+	}
+	else {
+		$("#and").prop("checked", true);
+	}
 	$.ajax({	
         url:"https://nowaiuqi8g.execute-api.ap-northeast-1.amazonaws.com/q",
 		type:"GET",
@@ -38,20 +42,28 @@ $(document).ready(function(){
 		}).done(function(json,textStatus,jqXHR) {
 			for(var i in json.list){
 				var r = json.list[i].res.split("-")[0]
+				var stID = json.list[i].tID;
+				var shandle = json.list[i].handle;
+				var sqBody = json.list[i].qBody;
+				var saBody = json.list[i].aBody;
+				var qs = getParam("q").replace("　", " ");
+				for(q of qs.split(" ")) {
+					stID = stID.split(q).join("<span class='match'>" + q + "</span>");
+					shandle = shandle.split(q).join("<span class='match'>" + q + "</span>");
+					sqBody = sqBody.split(q).join("<span class='match'>" + q + "</span>");
+					saBody = saBody.split(q).join("<span class='match'>" + q + "</span>");
+				}
 				var h = '<div class="box"><div class="footnote">'
-					+ '<a href="../posts/' + r + '">' + json.list[i].tID + '杯目 ' + json.list[i].res + '</a>'
+					+ '<a href="../posts/' + json.list[i].tID + '#' + r + '">' + stID + '杯目 ' + json.list[i].res + '</a>'
 					+ ' '
-					+ '<a href="./?q=' + json.list[i].handle + '&op=and">' + json.list[i].handle + '</a>'
+					+ '<a href="./?q=' + json.list[i].handle + '&op=and">' + shandle + '</a>'
 					+ ' '
 					+ json.list[i].date
 					+ '</div><div>'
-					+ json.list[i].qBody
+					+ sqBody
 					+ '</div><br><div class="footnote">解説</div><div>'
-					+ json.list[i].aBody
+					+ saBody
 					+ '</div></div></div>';
-				if (getParam("q") != "") {
-					h = h.split(getParam("q")).join("<span class='match'>" + getParam("q") + "</span>");
-				}
 				$("#f").append(h);
 			}
 		}).fail(function(jqXHR, textStatus, errorThrown ) {
@@ -62,7 +74,10 @@ $(document).ready(function(){
 
 <form id="form" action="" method="get">
 <input type="text" id="q" name="q">
-<input type="hidden" id="op" name="op">
+<input type="radio" id="and" name="op" value="and">
+<label for="and">AND</label>
+<input type="radio" id="or" name="op" value="or">
+<label for="or">OR</label>
 <input type="submit">
 </form>
 <div id="f"></div>
