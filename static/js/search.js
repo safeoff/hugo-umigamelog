@@ -52,6 +52,19 @@ function json2html(json) {
 	}
 }
 
+function searchCount (json){
+	var l = 0;
+	if (json.list != null) {
+		l = json.list.length;	
+	}
+	var s = '<div class="footnote">「' + $("#q").val() + '」の検索結果 - ' + l + '件'
+	if (l >= 1000) {
+		s += '以上（1000件まで表示）'
+	}
+	s += '</div>'
+	$("#f").append(s);
+}
+
 $(document).ready(function(){
 	initParam();
 	$.ajax({	
@@ -62,6 +75,7 @@ $(document).ready(function(){
 		timespan:1000
 		}).done(function(json,textStatus,jqXHR) {
     		$("#q").val($("#q").val().split("\\\\").join("\\").split("\\\"").join("\""));
+			searchCount(json);
 			json2html(json);
 		}).fail(function(jqXHR, textStatus, errorThrown ) {
 			$("#f").text(textStatus);
