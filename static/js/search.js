@@ -24,6 +24,19 @@ function initParam() {
 	}
 }
 
+function escapehtml(s) {
+	  return s.replace(/[&'`"<>]/g, function(match) {
+    return {
+      '&': '&amp;',
+      "'": '&#x27;',
+      '`': '&#x60;',
+      '"': '&quot;',
+      '<': '&lt;',
+      '>': '&gt;',
+    }[match]
+  });
+}
+
 function json2html(json) {
 	for(var list of json.list){
 		var r = list.res.split("-")[0]
@@ -33,10 +46,11 @@ function json2html(json) {
 		var saBody = list.aBody;
 		var qs = $("#q").val();
 		for(q of qs.split(" ")) {
-			stID = stID.split(q).join("<span class='match'>" + q + "</span>");
-			shandle = shandle.split(q).join("<span class='match'>" + q + "</span>");
-			sqBody = sqBody.split(q).join("<span class='match'>" + q + "</span>");
-			saBody = saBody.split(q).join("<span class='match'>" + q + "</span>");
+			q = escapehtml(q);
+			stID = escapehtml(stID).split(q).join("<span class='match'>" + q + "</span>");
+			shandle = escapehtml(shandle).split(q).join("<span class='match'>" + q + "</span>");
+			sqBody = escapehtml(sqBody).split(q).join("<span class='match'>" + q + "</span>");
+			saBody = escapehtml(saBody).split(q).join("<span class='match'>" + q + "</span>");
 		}
 		var h = '<div class="box"><div class="footnote">'
 			+ '<a href="../posts/' + list.tID + '#' + r + '">' + stID + '杯目 ' + list.res + '</a>'
@@ -58,7 +72,7 @@ function searchCount (json){
 	if (json.list != null) {
 		l = json.list.length;	
 	}
-	var s = '<div class="footnote">「' + $("#q").val() + '」の検索結果 - ' + l + '件'
+	var s = '<div class="footnote">「' + escapehtml($("#q").val()) + '」の検索結果 - ' + l + '件'
 	if (l >= 1000) {
 		s += '以上（1000件まで表示）'
 	}
