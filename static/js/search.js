@@ -13,6 +13,7 @@ function initParam() {
     q = q.split(/ +/g).join(" ");
     q = q.split("\\").join("\\\\");
     q = q.split("\"").join("\\\"");
+    q = q.split("'").join("''");
     q = q.trim();
     $("#q").val(q);
 	if (getParam("op") == "or") {
@@ -74,7 +75,7 @@ $(document).ready(function(){
 		dataType:"json",
 		timespan:1000
 		}).done(function(json,textStatus,jqXHR) {
-    		$("#q").val($("#q").val().split("\\\\").join("\\").split("\\\"").join("\""));
+    		$("#q").val($("#q").val().split("\\\\").join("\\").split("\\\"").join("\"").split("''").join("'"));
 			searchCount(json);
 			json2html(json);
 		}).fail(function(jqXHR, textStatus, errorThrown ) {
