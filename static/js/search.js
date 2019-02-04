@@ -38,6 +38,7 @@ function escapehtml(s) {
 }
 
 function json2html(json) {
+	var li = [];
 	for(var list of json.list){
 		var r = list.res.split("-")[0]
 		var stID = list.tID;
@@ -63,8 +64,9 @@ function json2html(json) {
 			+ '</div><br><div class="footnote">解説</div><div>'
 			+ saBody
 			+ '</div></div></div>';
-		$("#f").append(h);
+		li.push(h);
 	}
+	$("#f")[0].innerHTML += li.join("");
 }
 
 function searchCount (json){
