@@ -40,6 +40,10 @@
     {{ partial "css/custom.css" . | safeCSS }}
   </style>
 
+  <!-- q CSS -->
+  <style type="text/css" media="screen">
+    {{ partial "css/q.css" . | safeCSS }}
+  </style>
   <!-- Icon -->
   <link rel="shortcut icon" 
   {{ if .Site.Params.faviconfile }}

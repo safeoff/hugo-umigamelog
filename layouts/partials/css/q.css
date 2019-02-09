@@ -1,0 +1,10 @@
+.box {
+	background-color: #fafafa;
+	border: solid 1px #aaa;
+	margin: 1.5em 0.2em;
+	padding: 2em 1em;
+}
+.highlight {
+	background-color: yellow;
+	color: black;
+}
