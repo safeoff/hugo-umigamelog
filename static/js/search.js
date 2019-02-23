@@ -53,7 +53,7 @@ function json2html(json) {
 			sqBody = escapehtml(sqBody).split(q).join("<span class='match'>" + q + "</span>");
 			saBody = escapehtml(saBody).split(q).join("<span class='match'>" + q + "</span>");
 		}
-		var h = '<div class="box"><div class="footnote">'
+		var h = '<div class="box qa"><div class="footnote">'
 			+ '<a href="../posts/' + list.tID + '#' + r + '">' + stID + '杯目 ' + list.res + '</a>'
 			+ ' '
 			+ '<a href="./?q=' + list.handle + '&op=and">' + shandle + '</a>'

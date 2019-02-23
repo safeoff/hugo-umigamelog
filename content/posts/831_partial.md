@@ -3,9 +3,7 @@ title: 831_partial
 date: 2019-01-05T12:12:11+09:00
 tags: [2018,occult]
 ---
-{{< navbar >}}
-{{< navbar >}}
-{{< navbar >}}
+{{< 831 >}}
 
 <div id="11" class="footnote">11 本当にあった怖い名無し sage 2017/12/31(日) 21:39:10.21 1XbhPiaW0</div>
 男は学生ですか?
