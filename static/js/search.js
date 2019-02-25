@@ -37,6 +37,14 @@ function escapehtml(s) {
   });
 }
 
+function highlight(arr) {
+  var str;
+  $.each(arr, function(i) {
+    str = $('#f').html().replace(new RegExp(arr[i], 'g'), '<mark>' + arr[i] + '</mark>');
+    $('#f').html(str);
+  });
+}
+
 function json2html(json) {
 	var li = [];
 	for(var list of json.list){
@@ -45,14 +53,6 @@ function json2html(json) {
 		var shandle = list.handle;
 		var sqBody = list.qBody;
 		var saBody = list.aBody;
-		var qs = $("#q").val();
-		for(q of qs.split(" ")) {
-			q = escapehtml(q);
-			stID = escapehtml(stID).split(q).join("<span class='match'>" + q + "</span>");
-			shandle = escapehtml(shandle).split(q).join("<span class='match'>" + q + "</span>");
-			sqBody = escapehtml(sqBody).split(q).join("<span class='match'>" + q + "</span>");
-			saBody = escapehtml(saBody).split(q).join("<span class='match'>" + q + "</span>");
-		}
 		var h = '<div class="box qa"><div class="footnote">'
 			+ '<a href="../posts/' + list.tID + '#' + r + '">' + stID + '杯目 ' + list.res + '</a>'
 			+ ' '
@@ -67,6 +67,8 @@ function json2html(json) {
 		li.push(h);
 	}
 	$("#f")[0].innerHTML += li.join("");
+	var qs = $("#q").val().split(" ");
+	highlight(qs);
 }
 
 function searchCount (json){

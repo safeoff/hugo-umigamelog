@@ -1,9 +1,9 @@
 .box {
-	border-bottom: solid 1px #aaa;
+	border-bottom: solid 1px #ccc;
 	padding: 0.7em 0em;
 }
 .qa {
-	background-color: linen;
+	background-color: #fff5f0;
 	margin: 1em 0em;
 	padding: 0.7em 0.5em;
 }
