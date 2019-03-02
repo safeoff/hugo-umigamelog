@@ -15,3 +15,6 @@
     font-size: 0.7em;
     line-height: 1em;
 }
+a{
+	word-break: break-all;
+}
