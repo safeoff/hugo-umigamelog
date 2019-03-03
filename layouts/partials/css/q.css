@@ -16,3 +16,9 @@
     font-size: 0.7em;
     line-height: 1em;
 }
+.th_left {
+	float: left;
+}
+.th_right {
+	float: right;
+}
