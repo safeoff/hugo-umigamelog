@@ -18,3 +18,5 @@ umigamelog.minibird.jpが不調なのであわてて移転しました。（め�
 <label for="or">OR</label>
 <input type="submit">
 </form>
+
+現行スレは<a href="https://mao.5ch.net/test/read.cgi/occult/1557775217">★★ウミガメのスープ★★834杯目　令和ねこ味</a>
