@@ -16,4 +16,4 @@ date: 2019-01-05T12:44:18+09:00
 <input type="submit">
 </form>
 
-現行スレは<a href="https://mao.5ch.net/test/read.cgi/occult/1557775217">★★ウミガメのスープ★★835杯目　プレゼント味</a>
+現行スレは<a href="https://mao.5ch.net/test/read.cgi/occult/1577337030">★★ウミガメのスープ★★835杯目　プレゼント味</a>
