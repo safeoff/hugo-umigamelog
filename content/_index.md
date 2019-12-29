@@ -2,9 +2,6 @@
 title: "オカルト板ウミガメのスープ保管庫"
 date: 2019-01-05T12:44:18+09:00
 ---
-umigamelog.minibird.jpが不調なのであわてて移転しました。（めっちゃ未完成。。。）
-進捗は<a href="https://jbbs.shitaraba.net/bbs/read.cgi/movie/1446/1094821408/">関連サイトスレ</a>に書いていきます、すみませんすみません
-
 →のTagsに、年/種別のスレ一覧があります。
 
 過去問から全文検索ができます。出題されたスレッドの杯数・出題者名・レスの本文が検索対象です。  
@@ -19,4 +16,4 @@ umigamelog.minibird.jpが不調なのであわてて移転しました。（め�
 <input type="submit">
 </form>
 
-現行スレは<a href="https://mao.5ch.net/test/read.cgi/occult/1557775217">★★ウミガメのスープ★★834杯目　令和ねこ味</a>
+現行スレは<a href="https://mao.5ch.net/test/read.cgi/occult/1557775217">★★ウミガメのスープ★★835杯目　プレゼント味</a>
