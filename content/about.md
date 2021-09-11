@@ -39,4 +39,4 @@ date: 2019-06-16T12:44:18+09:00
 # <div id="s3">問い合わせ</div>
 
 ↓の掲示板で呼びかけてください。たぶん反応します。  
-<a href="http://jbbs.livedoor.jp/bbs/read.cgi/movie/1446/1094821408/">ウミガメのスープ雑談掲示板・関連サイトの関連話</a><br>
+<a href="https://jbbs.shitaraba.net/bbs/read.cgi/movie/1446/1094821408/">ウミガメのスープ雑談掲示板・関連サイトの関連話</a><br>
