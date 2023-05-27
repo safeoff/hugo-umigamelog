@@ -16,4 +16,4 @@ date: 2019-01-05T12:44:18+09:00
 <input type="submit">
 </form>
 
-現行スレは<a href="https://mao.5ch.net/test/read.cgi/occult/1589557457">★★ウミガメのスープ★★836杯目　森林火災味</a>
+現行スレは現在ないです
