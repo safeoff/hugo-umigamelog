@@ -1,3 +1,10 @@
 baseURL = "https://umigamelog.netlify.app/"
 languageCode = "ja-jp"
 title = "オカルト板ウミガメのスープ保管庫"
+theme = "temple"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+  author = "safeoff"
