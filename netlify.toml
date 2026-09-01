@@ -1,8 +1,6 @@
 [build]
-  command = "hugo --gc"
+  command = "curl -sL https://github.com/gohugoio/hugo/releases/download/v0.40.1/hugo_0.40.1_Linux-64bit.tar.gz | tar xz && ./hugo --gc"
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.40.1"
-  HUGO_EXTENDED = "false"
   HUGO_ENABLEGITINFO = "true"
